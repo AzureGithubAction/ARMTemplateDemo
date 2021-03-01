@@ -101,8 +101,7 @@
   },
   "variables": {
     "storageAccountName": "rg07224tcs001stdsa",
-    "nicName": "ARMVMNic",
-    "addressPrefix": "10.109.146.20",
+    "nicName": "ARMVMNic",    
     "subnetName": "app_dev",
     "subnetPrefix": "10.109.146.0/25",
     "virtualNetworkName": "POC_EastUS_SPOKE2_DEV_VNet",
