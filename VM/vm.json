@@ -100,11 +100,11 @@
     }
   },
   "variables": {
-    "storageAccountName": "rg07224tcs001stdsa",
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'sa')]",
     "nicName": "ARMVMNic",
-    "addressPrefix": "10.109.145.6",
+    "addressPrefix": "10.0.0.0/16",
     "subnetName": "web_int_dev",
-    "subnetPrefix": "10.109.145.0/24",
+    "subnetPrefix": "10.0.0.0/24",
     "virtualNetworkName": "POC_EastUS_SPOKE2_DEV_VNet",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "networkSecurityGroupName": "default-NSG"
