@@ -102,9 +102,9 @@
   "variables": {
     "storageAccountName": "rg07224tcs001stdsa",
     "nicName": "ARMVMNic",
-    "addressPrefix": "10.109.0.0/16",
-    "subnetName": "app_dev",
-    "subnetPrefix": "10.109.146.0/25",
+    "addressPrefix": "10.109.145.6",
+    "subnetName": "web_int_dev",
+    "subnetPrefix": "10.109.145.0/24",
     "virtualNetworkName": "POC_EastUS_SPOKE2_DEV_VNet",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
     "networkSecurityGroupName": "default-NSG"
