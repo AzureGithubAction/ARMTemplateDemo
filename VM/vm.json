@@ -100,8 +100,8 @@
     }
   },
   "variables": {
-    "storageAccountName": "rg07224tcs001stdsa002",
-    "nicName": "ARMVMNic",
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa005')]",
+    "nicName": "ArmVMNic01",
     "addressPrefix": "10.109.145.0/24",
     "subnetName": "web_int_dev",
     "subnetPrefix": "10.109.145.0/24",
