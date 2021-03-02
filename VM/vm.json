@@ -198,9 +198,5 @@
     }
   ],
   "outputs": {
-    "hostname": {
-      "type": "string",
-      "value": "[reference(parameters('publicIPName')).dnsSettings.fqdn]"
-    }
   }
 }
