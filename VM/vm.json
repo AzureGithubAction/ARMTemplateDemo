@@ -100,7 +100,7 @@
     }
   },
   "variables": {
-    "storageAccountName": "rg07224tcs001stdsa",
+    "storageAccountName": "rg07224tcs001stdsa002",
     "nicName": "ARMVMNic",
     "addressPrefix": "10.109.145.0/24",
     "subnetName": "web_int_dev",
