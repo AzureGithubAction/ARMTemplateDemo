@@ -4,7 +4,7 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
-	  "defaultValue": "admin",
+	  "defaultValue": "azureadm",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
