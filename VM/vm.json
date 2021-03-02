@@ -16,7 +16,8 @@
       "metadata": {
         "description": "Password for the Virtual Machine."
       }
-    },    
+    },
+
     "OSVersion": {
       "type": "string",
       "defaultValue": "2019-Datacenter",
@@ -64,7 +65,7 @@
   },
   "variables": {
     "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa005')]",
-    "nicName": "ARMVMNic",
+    "nicName": "ArmVMNic01",
     "addressPrefix": "10.109.145.0/24",
     "subnetName": "web_int_dev",
     "subnetPrefix": "10.109.145.0/24",
@@ -83,7 +84,7 @@
       },
       "kind": "Storage",
       "properties": {}
-    },    
+    },
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2020-06-01",
