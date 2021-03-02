@@ -16,44 +16,7 @@
       "metadata": {
         "description": "Password for the Virtual Machine."
       }
-    },
-    "dnsLabelPrefix": {
-      "type": "string",
-      "defaultValue": "[toLower(concat(parameters('vmName'),'-', uniqueString(resourceGroup().id, parameters('vmName'))))]",
-      "metadata": {
-        "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
-      }
-    },
-    "publicIpName": {
-      "type": "string",
-      "defaultValue": "ARMPublicIP",
-      "metadata": {
-        "description": "Name for the Public IP used to access the Virtual Machine."
-      }
-    },
-    "publicIPAllocationMethod": {
-      "type": "string",
-      "defaultValue": "Dynamic",
-      "allowedValues": [
-        "Dynamic",
-        "Static"
-      ],
-      "metadata": {
-        "description": "Allocation method for the Public IP used to access the Virtual Machine."
-      }
-    },
-    "publicIpSku": {
-      "type": "string",
-      "defaultValue": "Basic",
-      "allowedValues": [
-        "Basic",
-        "Standard"
-      ],
-      "metadata": {
-        "description": "SKU for the Public IP used to access the Virtual Machine."
-      }
-    },
-
+    },    
     "OSVersion": {
       "type": "string",
       "defaultValue": "2019-Datacenter",
@@ -101,7 +64,7 @@
   },
   "variables": {
     "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa005')]",
-    "nicName": "ArmVMNic01",
+    "nicName": "ARMVMNic",
     "addressPrefix": "10.109.145.0/24",
     "subnetName": "web_int_dev",
     "subnetPrefix": "10.109.145.0/24",
@@ -120,22 +83,7 @@
       },
       "kind": "Storage",
       "properties": {}
-    },
-    {
-      "type": "Microsoft.Network/publicIPAddresses",
-      "apiVersion": "2020-06-01",
-      "name": "[parameters('publicIPName')]",
-      "location": "[parameters('location')]",
-      "sku": {
-        "name": "[parameters('publicIpSku')]"
-      },
-      "properties": {
-        "publicIPAllocationMethod": "[parameters('publicIPAllocationMethod')]",
-        "dnsSettings": {
-          "domainNameLabel": "[parameters('dnsLabelPrefix')]"
-        }
-      }
-    },
+    },    
     {
       "type": "Microsoft.Network/networkSecurityGroups",
       "apiVersion": "2020-06-01",
@@ -267,10 +215,4 @@
       }
     }
   ],
-  "outputs": {
-    "hostname": {
-      "type": "string",
-      "value": "[reference(parameters('publicIPName')).dnsSettings.fqdn]"
-    }
-  }
 }
