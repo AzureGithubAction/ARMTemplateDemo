@@ -1,4 +1,4 @@
-name: AzureARMDeploy
+name: vmdeploy
 
 on:
   push:
