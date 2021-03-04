@@ -18,6 +18,7 @@
       "location": {
         "type": "string",
         "value": "[resourceGroup().location]",
+        "defaultValue": "[resourceGroup().location]",  
         "metadata": {
           "description": "Location for all resources."
         }
