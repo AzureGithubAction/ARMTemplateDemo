@@ -26,5 +26,5 @@ jobs:
             az deployment group create \
             --name StorageAccountDeployment \
             --resource-group rg-07224-tcs-001 \
-            --template-file armtemplates/storageaccount.json \
+            --template-file storageacct/storageaccount.json \
             --parameters storageAccountType=Standard_GRS
