@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 # Clone ARM-TTK Repo
 RUN git clone https://github.com/Azure/arm-ttk.git
-RUN git clone https://github.com/whaakman/armttk-github-action-demo.git /temp
+RUN git clone https://github.com/AzureGithubAction/ARMTemplateDemo/tree/main/storageacct /temp
 
 # Copy the Entrypoint file from the current directory (the one the Dockerfile is located in)
 COPY entrypoint.ps1 /entrypoint.ps1
