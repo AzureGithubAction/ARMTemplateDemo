@@ -17,14 +17,14 @@
       },
       "location": {
         "type": "string",
-        "defaultValue": "[resourceGroup().location]",
+        "value": "[resourceGroup().location]",
         "metadata": {
           "description": "Location for all resources."
         }
       }
     },
     "variables": {
-      "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa03')]"
+      "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa04')]"
     },
     "resources": [
       {
