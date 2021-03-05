@@ -17,7 +17,7 @@
       },
       "location": {
         "type": "string",
-        "value": "[resourceGroup().location]",
+        "value": "eastus",
         "metadata": {
           "description": "Location for all resources."
         }
