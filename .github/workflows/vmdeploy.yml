@@ -1,4 +1,4 @@
-name: vmdeploy
+name: AzureARMDeploy
 
 on:
   push:
@@ -18,6 +18,10 @@ jobs:
 
       - name: Checkout source code
         uses: actions/checkout@v2
+        
+      - name: Run ARM TTK
+        uses: ./.github/actions
+        id: action        
 
       - name: Deploy ARM Template
         uses: azure/CLI@v1
