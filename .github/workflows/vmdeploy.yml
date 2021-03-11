@@ -1,4 +1,4 @@
-name: AzureARMDeploy
+name: VMDeploy
 
 on:
   push:
@@ -24,10 +24,7 @@ jobs:
         id: action        
 
       - name: Deploy ARM Template
-        uses: azure/CLI@v1
+        uses: azure/arm-deploy@v1
         with:
-          inlineScript: |
-            az deployment group create \
-            --name VMDeployment \
-            --resource-group githubdemo1-rg \
-            --template-file VM/vm.json
+          resourceGroupName: githubdemo1-rg
+          template: VM/vm.json

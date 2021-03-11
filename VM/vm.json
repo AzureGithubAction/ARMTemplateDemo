@@ -57,14 +57,14 @@
     },
     "vmName": {
       "type": "string",
-      "defaultValue": "[concat(replace(toLower(resourceGroup().name),'-',''), 'VM')]",
+      "defaultValue": "[concat(replace(toLower(resourceGroup().name),'-',''), 'VM01')]",
       "metadata": {
         "description": "Name of the virtual machine."
       }
     }
   },
   "variables": {
-    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa05')]",
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa01')]",
     "nicName": "ArmVMNic01",
     "addressPrefix": "10.0.0.0/24",
     "subnetName": "web_dev",
