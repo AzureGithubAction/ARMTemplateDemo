@@ -57,7 +57,7 @@
     },
     "location": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]",
+      "value": "[resourceGroup().location]",
       "metadata": {
         "description": "Location for all resources."
       }
@@ -71,7 +71,7 @@
     }
   },
   "variables": {
-    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa05')]",
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa006')]",
     "nicName": "ArmVMNic02",
     "addressPrefix": "10.109.145.0/24",
     "subnetName": "web_int_dev",
@@ -110,33 +110,6 @@
               "sourcePortRange": "*",
               "sourceAddressPrefix": "*",
               "destinationAddressPrefix": "*"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "type": "Microsoft.Network/virtualNetworks",
-      "apiVersion": "2020-06-01",
-      "name": "[variables('virtualNetworkName')]",
-      "location": "[parameters('location')]",
-      "dependsOn": [
-        "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-      ],
-      "properties": {
-        "addressSpace": {
-          "addressPrefixes": [
-            "[variables('addressPrefix')]"
-          ]
-        },
-        "subnets": [
-          {
-            "name": "[variables('subnetName')]",
-            "properties": {
-              "addressPrefix": "[variables('subnetPrefix')]",
-              "networkSecurityGroup": {
-                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-              }
             }
           }
         ]
