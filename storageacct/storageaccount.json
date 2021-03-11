@@ -24,7 +24,7 @@
     }
   },
   "variables": {
-    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa07')]"
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'stdsa01')]"
   },
   "resources": [
     {
