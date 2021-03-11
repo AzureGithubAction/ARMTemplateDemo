@@ -57,7 +57,7 @@
     },
     "vmName": {
       "type": "string",
-      "defaultValue": "[concat(replace(toLower(resourceGroup().name),'-',''), 'VM01')]",
+      "defaultValue": "[concat(replace(toLower(resourceGroup().name),'-',''), 'VM')]",
       "metadata": {
         "description": "Name of the virtual machine."
       }
