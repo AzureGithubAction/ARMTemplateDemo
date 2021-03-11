@@ -29,5 +29,5 @@ jobs:
           inlineScript: |
             az deployment group create \
             --name VMDeployment \
-            --resource-group rg-07224-tcs-001 \
+            --resource-group githubdemo1-rg \
             --template-file VM/vm.json
