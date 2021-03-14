@@ -28,3 +28,5 @@ jobs:
         with:
           resourceGroupName: githubdemo1-rg
           template: VM/vm.json
+          parameters: VM/vm.parameters.json
+          deploymentName: vm-deployment
