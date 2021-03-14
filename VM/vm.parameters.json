@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "adminUsername": {
+        "value": "azureadm"
+      },
+      "adminPassword": {
+        "value": "Passw0rd@123"
+      },
+      "OSVersion": {
+        "value": "2019-Datacenter" 
+      },
+      "vmSize": {
+        "value": "Standard_D2_v3" 
+      },
+      "nicName": {
+        "value": "ArmVMNic01"  
+      },
+      "addressPrefix": {
+        "value": "10.0.0.0/24"  
+      },
+      "subnetName": {
+        "value": "web_dev"  
+      },
+      "subnetPrefix": {
+        "value": "10.0.0.0/24"  
+      },
+      "virtualNetworkName": {
+          "value": "POC_DEV_VNet"
+      },
+      "networkSecurityGroupName": {
+          "value": "default-NSG" 
+      }    
+    }
+  }

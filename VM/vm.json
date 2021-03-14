@@ -4,14 +4,12 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
-	  "defaultValue": "azureadm",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
     },
     "adminPassword": {
       "type": "securestring",
-	  "defaultValue": "Passw0rd@123",
       "minLength": 12,
       "metadata": {
         "description": "Password for the Virtual Machine."
@@ -20,7 +18,6 @@
 
     "OSVersion": {
       "type": "string",
-      "defaultValue": "2019-Datacenter",
       "allowedValues": [
         "2008-R2-SP1",
         "2012-Datacenter",
@@ -43,7 +40,6 @@
     },
     "vmSize": {
       "type": "string",
-      "defaultValue": "Standard_D2_v3",
       "metadata": {
         "description": "Size of the virtual machine."
       }
@@ -61,17 +57,53 @@
       "metadata": {
         "description": "Name of the virtual machine."
       }
-    }
+    },
+    "nicName": {
+      "type": "string",
+      "metadata": {
+        "description": "Network Interface Card"
+      }
+    },
+    "addressPrefix": {
+      "type": "array",
+      "metadata": {
+        "description": "Address prefix of NIC"
+      }
+    },
+    "subnetName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the subnet"
+      }
+    },
+    "subnetPrefix": {
+      "type": "string",
+      "metadata": {
+        "description": "Subnet prefix of the virtual network"
+      }
+    },
+    "virtualNetworkName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the virtual network"
+      }
+    },
+    "networkSecurityGroupName": {
+        "type": "string",
+        "metadata": {
+            "description": "Network Security Group Name"
+        }
+    }    
   },
   "variables": {
-    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'sa02')]",
-    "nicName": "ArmVMNic01",
-    "addressPrefix": "10.0.0.0/24",
-    "subnetName": "web_dev",
-    "subnetPrefix": "10.0.0.0/24",
-    "virtualNetworkName": "POC_DEV_VNet",
+    "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'sa01')]",
+    "nicName": "[parameters('nicName')]",
+    "addressPrefix": "[parameters('addressPrefix')]",
+    "subnetName": "[parameters('subnetName')]",
+    "subnetPrefix": "[parameters('subnetPrefix')]",
+    "virtualNetworkName": "[parameters('virtualNetworkName')]",
     "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
-    "networkSecurityGroupName": "default-NSG"
+    "networkSecurityGroupName": "[parameters('networkSecurityGroupName')]"
   },
   "resources": [
     {
