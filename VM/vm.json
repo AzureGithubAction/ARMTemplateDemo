@@ -77,7 +77,7 @@
       }
     },
     "subnetPrefix": {
-      "type": "string",
+      "type": "array",
       "metadata": {
         "description": "Subnet prefix of the virtual network"
       }
