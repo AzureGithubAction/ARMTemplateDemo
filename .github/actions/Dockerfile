@@ -4,7 +4,7 @@ LABEL "com.github.actions.name"="ARM TTK"
 LABEL "com.github.actions.description"="Checks template with the ARM TTK"
 
 LABEL version="0.0.1"
-LABEL maintainer="Wesley Haakman" 
+LABEL maintainer="TTK" 
 
 # Install Git
 RUN apt-get update && \
