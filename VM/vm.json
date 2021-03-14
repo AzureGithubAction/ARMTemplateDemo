@@ -64,8 +64,8 @@
         "description": "Network Interface Card"
       }
     },
-    "addressPrefixes": {
-      "type": "array",
+    "addressPrefix": {
+      "type": "string",
       "metadata": {
         "description": "Address prefix of NIC"
       }
@@ -77,7 +77,7 @@
       }
     },
     "subnetPrefix": {
-      "type": "array",
+      "type": "string",
       "metadata": {
         "description": "Subnet prefix of the virtual network"
       }
@@ -98,7 +98,7 @@
   "variables": {
     "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), 'sa01')]",
     "nicName": "[parameters('nicName')]",
-    "addressPrefixes": "[parameters('addressPrefixes')]",
+    "addressPrefix": "[parameters('addressPrefix')]",
     "subnetName": "[parameters('subnetName')]",
     "subnetPrefix": "[parameters('subnetPrefix')]",
     "virtualNetworkName": "[parameters('virtualNetworkName')]",

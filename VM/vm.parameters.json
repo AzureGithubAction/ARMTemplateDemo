@@ -17,10 +17,8 @@
       "nicName": {
         "value": "ArmVMNic01"  
       },
-      "addressPrefixes": {
-          "value": [
-            "10.0.0.0/24"
-          ]
+      "addressPrefix": {
+          "value": "10.0.0.0/24"
       },
       "subnetName": {
         "value": "web_dev"  
