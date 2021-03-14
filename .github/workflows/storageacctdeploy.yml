@@ -24,9 +24,11 @@ jobs:
         id: action        
 
       - name: Deploy ARM Template
-        uses: azure/arm-deploy@v1
+        uses: azure/CLI@v1
         with:
-          resourceGroupName: githubdemo1-rg
-          template: storageacct/storageaccount.json
-          parameters: storageacct/storageaccount.parameters.json
-          deploymentName: storageaccount-deployment
+          inlineScript: |
+            az deployment group create \
+            --name StorageAccountDeployment \
+            --resource-group githubdemo1-rg \
+            --template-file storageacct/storageaccount.json \
+            --parameters storageacct/storageaccount.parameters.json
