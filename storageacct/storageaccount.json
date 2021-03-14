@@ -10,14 +10,14 @@
       },
       "location": {
         "type": "string",
-        "defaluValue": "[resourceGroup().location]",
+        "defaultValue": "[resourceGroup().location]",
         "metadata": {
           "description": "Location for all resources."
         }
       },
       "dnsLabelPrefix": {
         "type": "string",
-        "defaultValue": "[toLower(concat(parameters('vmName'),'-', uniqueString(resourceGroup().id, parameters('vmName'))))]",
+        "defaValue": "[toLower(concat(parameters('vmName'),'-', uniqueString(resourceGroup().id, parameters('vmName'))))]",
         "metadata": {
           "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
         }
