@@ -10,11 +10,19 @@
       },
       "location": {
         "type": "string",
-        //"value": "[resourceGroup().location]",
+        "defaluValue": "[resourceGroup().location]",
         "metadata": {
           "description": "Location for all resources."
         }
+      },
+      "dnsLabelPrefix": {
+        "type": "string",
+        "defaultValue": "[toLower(concat(parameters('vmName'),'-', uniqueString(resourceGroup().id, parameters('vmName'))))]",
+        "metadata": {
+          "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+        }
       }
+
     },
     "variables": {
       "storageAccountName": "[concat(replace(toLower(resourceGroup().name),'-',''), '01')]"
