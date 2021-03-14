@@ -4,10 +4,6 @@
     "parameters": {
       "storageAccountType": {
         "value": "Standard_LRS"
-      },
-      "location": {
-        "value": "[resourceGroup().location]"
-      }     
-
+      }
     }
   }
