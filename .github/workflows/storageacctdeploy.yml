@@ -28,4 +28,5 @@ jobs:
         with:
           resourceGroupName: githubdemo1-rg
           template: storageacct/storageaccount.json
-          parameters: storageAccountType=Standard_LRS
+          parameters: storageacct/storageaccount.parameters.json
+          deploymentName: storageaccount-deployment
